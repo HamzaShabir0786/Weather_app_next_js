@@ -1,33 +1,88 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@import url("https://fonts.googleapis.com/css2?family=Bokor&family=Pirata+One&display=swap");
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(45deg, rgb(105, 98, 228), pink);
+}
+.box {
+  background-color: skyblue;
+  height: 25rem;
+  width: 20rem;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(45deg, skyblue, pink);
+  overflow: hidden;
+  border: 3px solid red;
+  border-color: pink skyblue pink skyblue;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+.box h1 {
+  background: linear-gradient(to bottom, rgb(9, 172, 242), rgb(217, 132, 146));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  font-family: "Bokor", system-ui;
+  font-weight: 400;
+}
+.box h2 {
+  letter-spacing: 3px;
+}
+.inputFeild {
+  background-color: rgb(163, 207, 225);
+  padding: 0.5rem;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin-top: 2rem;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 50%;
+  margin-top: 2rem;
+}
+.copyRight {
+  font-size: 0.8rem;
+}
+.errorMessage {
+  margin-top: 4rem;
+}
+.info h2 i {
+  font-style: normal;
+}
+.info h2 span {
+  animation: location 2s linear 0s infinite alternate-reverse;
+}
+@keyframes location {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media (width<400px) {
+  body {
+    align-items: start;
+    padding-top: 4rem;
   }
 }
